@@ -14,8 +14,8 @@
 </head>
 <body>
     
-    <section class="sec">
-        <div class="container swiper">
+    <section class="sec movie">
+        <div class="container swiper swiper-movie" id="swiper-movie">
             <ul class="swiper-wrapper">
                 <li class="swiper-slide"><a href="#"><img src="./images/boxoffice01.jpg" alt="boxoffice01"></a></li>
                 <li class="swiper-slide"><a href="#"><img src="./images/boxoffice02.jpg" alt="boxoffice02"></a></li>
@@ -28,18 +28,43 @@
                 <li class="swiper-slide"><a href="#"><img src="./images/boxoffice09.jpg" alt="boxoffice09"></a></li>
                 <li class="swiper-slide"><a href="#"><img src="./images/boxoffice10.jpg" alt="boxoffice10"></a></li>
             </ul>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+    </section>
+    <section class="sec exp">
+        <div class="container swiper swiper-exp" id="swiper-exp">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="#"><img src="./images/exp01.jpg" alt="boxoffice01"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp02.jpg" alt="boxoffice02"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp03.jpg" alt="boxoffice03"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp04.jpg" alt="boxoffice04"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp05.jpg" alt="boxoffice05"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp06.jpg" alt="boxoffice06"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp07.jpg" alt="boxoffice07"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp08.jpg" alt="boxoffice08"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp09.jpg" alt="boxoffice09"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/exp10.jpg" alt="boxoffice10"></a></li>
+            </ul>
             <!-- <div class="swiper-button-next"></div> -->
             <!-- <div class="swiper-button-prev"></div> -->
             <!-- <div class="swiper-pagination"></div> -->
         </div>
     </section>
+    <button class="start" style="width:100px;height:40px;">재생</button>
+    <button class="stop" style="width:100px;height:40px;">멈춤</button>
 
     
     <script>
-        const swiper = new Swiper('.container',{
+        const movieSwiper = new Swiper('.swiper-movie',{
             // 기본
             slidesPerView:2.5,
             spaceBetween:20,
+            navigation:{
+                nextEl:'.swiper-button-next',
+                prevEl:'.swiper-button-prev',
+            },
 
             // responsive berakpoints
             breakpoints:{
@@ -68,6 +93,20 @@
             //     el: ".swiper-pagination",
             // },
         });
+
+
+        const expSwiper = new Swiper('#swiper-exp',{
+            slidesPerView:3,
+            autoplay:{
+                delay:1000,
+            }
+        });
+        document.querySelector('.start').onclick=function(){
+            expSwiper.autoplay.start();
+        };
+        document.querySelector('.stop').onclick=function(){
+            expSwiper.autoplay.stop();
+        };
     </script>
 </body>
 </html>
