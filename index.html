@@ -7,59 +7,67 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Document</title>
     <style>
-        .swiper{
-            max-width:960px;
-            height:300px;
-            margin:0 auto;
-            border:1px solid black;
-        }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        img{width:100%;}
     </style>
     
 </head>
 <body>
-    <!-- Slider main container -->
-    <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
+    
+    <section class="sec">
+        <div class="container swiper">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice01.jpg" alt="boxoffice01"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice02.jpg" alt="boxoffice02"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice03.jpg" alt="boxoffice03"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice04.jpg" alt="boxoffice04"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice05.jpg" alt="boxoffice05"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice06.jpg" alt="boxoffice06"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice07.jpg" alt="boxoffice07"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice08.jpg" alt="boxoffice08"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice09.jpg" alt="boxoffice09"></a></li>
+                <li class="swiper-slide"><a href="#"><img src="./images/boxoffice10.jpg" alt="boxoffice10"></a></li>
+            </ul>
+            <!-- <div class="swiper-button-next"></div> -->
+            <!-- <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-pagination"></div> -->
         </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
-    
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-    
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
-    </div>
+    </section>
+
     
     <script>
-        const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
+        const swiper = new Swiper('.container',{
+            // 기본
+            slidesPerView:2.5,
+            spaceBetween:20,
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+            // responsive berakpoints
+            breakpoints:{
+                768:{
+                    slidesPerView:3.4,
+                },
+                960:{
+                    slidesPerView:4.6,
+                },
+                1200:{
+                    slidesPerView:5.3,
+                },
+                1800:{
+                    slidesPerView:6.7,
+                },
+            },
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
+            // 768이상
+
+            // navigation: {
+            //     nextEl: ".swiper-button-next",
+            //     prevEl: ".swiper-button-prev",
+            // },
+            // pagination: {
+            //     el: ".swiper-pagination",
+            // },
+        });
     </script>
 </body>
 </html>
